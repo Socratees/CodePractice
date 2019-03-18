@@ -1,4 +1,4 @@
-package leetcode961;
+package leetcode.leetcode961;
 
 public class leetcode961 {
     public int repeatedNTimes(int[] A) {
