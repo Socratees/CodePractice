@@ -7,7 +7,7 @@ public class leetcode697 {
 
         int min = 0;
         List<Integer> commonList = getCommonNumber(nums);
-        
+
         int l = 0, r = 0;
         for(int i = 0; i < commonList.size(); i++){
             for(int j = 0; j < nums.length; j++){
