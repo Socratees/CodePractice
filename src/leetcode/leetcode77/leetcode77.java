@@ -2,6 +2,7 @@ package leetcode.leetcode77;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class leetcode77 {
     public List<List<Integer>> combine(int n, int k) {
@@ -31,6 +32,7 @@ public class leetcode77 {
 
     public static void main(String[] args) {
         leetcode77 leetcode77 = new leetcode77();
+        System.out.println(leetcode77.getClass().getName());
         System.out.println(leetcode77.combine(4,2));
     }
 }
