@@ -18,11 +18,7 @@ public class Solution {
             }
         }
         List<Integer> v = new ArrayList<Integer>(hashtable.keySet());
-        Collections.sort(v, new Comparator<Integer>() {
-            public int compare(Integer arg0, Integer arg1) {
-                return hashtable.get(arg1) - hashtable.get(arg0);
-            }
-        });
+        Collections.sort(v, (arg0, arg1) -> hashtable.get(arg1) - hashtable.get(arg0));
         System.out.println(v);
         for (int i = 0; i < result.length; i++) {
             result[i] = v.get(i);

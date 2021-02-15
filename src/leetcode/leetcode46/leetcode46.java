@@ -5,48 +5,35 @@ import java.util.Arrays;
 import java.util.List;
 
 public class leetcode46 {
-    public List<List<Integer>> res = new ArrayList<>();
+
+    List<List<Integer>> result = new ArrayList<>();
 
     public List<List<Integer>> permute(int[] nums) {
-
-        int len = nums.length;
-        if (len == 0 || nums == null) {
-            return res;
-        }
-        exchange(nums, 0, len);
-        return res;
+        List<Integer> list = new ArrayList<>();
+        backtrack(list, nums);
+        return result;
     }
 
-    public  void exchange(int[] nums, int i, int len) {
-        if (i == len - 1) {
-            List<Integer> list = new ArrayList<>();
-            for (int k = 0; k < len; k++) {
-                list.add(nums[k]);
-            }
-            res.add(list);
+    public void backtrack(List<Integer> list, int[] nums) {
+        if (list.size() == nums.length) {
+            result.add(new ArrayList<>(list));
             return;
         }
+        for (int n : nums) {
+            if (!list.contains(n)) {
+                list.add(n);
+                backtrack(list, nums);
+                list.remove(list.size() - 1);
+            }
 
-        for (int j = i; j < len; j++) {
-            swap(nums, i, j);
-            exchange(nums, i + 1, len);
-            swap(nums, i, j);
         }
-
-    }
-
-    public void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
     }
 
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4};
+        int[] nums = {1, 2, 3};
         leetcode46 l = new leetcode46();
-
         l.permute(nums);
-        System.out.println(l.res);
+        System.out.println(l.result);
     }
 }
