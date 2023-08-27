@@ -30,11 +30,12 @@ public class QuickSort {
         quick_sort(arr, j + 1, right);
     }
 
-//    private final static Random random = new Random(System.currentTimeMillis());
-//
+    private final static Random random = new Random(System.currentTimeMillis());
+
 //    public static int partition(int[] nums, int left, int right) {
 //        int randomIndex = left + random.nextInt(right - left + 1);
-//        int pivot = nums[randomIndex];
+//        swap(nums, left, randomIndex);
+//        int pivot = nums[left];
 //        int le = left + 1;
 //        int ge = right;
 //        while (true) {
